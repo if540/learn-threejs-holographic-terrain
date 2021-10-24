@@ -1,4 +1,4 @@
-# Three.js - Template - Simple
+# Learn Three.js - Holographic Terrain
 
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).
