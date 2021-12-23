@@ -150,6 +150,8 @@ void main()
     0
   ));
 
+  modelPosition.y += elevation;
+
   vec4 viewPosition = viewMatrix * modelPosition;
   vec4 projectionPosition = projectionMatrix * viewPosition;
   gl_Position = projectionPosition;
