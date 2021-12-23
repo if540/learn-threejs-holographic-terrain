@@ -139,6 +139,8 @@ float cnoise(vec4 P){
   return 2.2 * n_xyzw;
 }
 
+varying float vElevation;
+
 void main()
 {
   vec4 modelPosition = modelMatrix * vec4(position, 1);
@@ -155,4 +157,6 @@ void main()
   vec4 viewPosition = viewMatrix * modelPosition;
   vec4 projectionPosition = projectionMatrix * viewPosition;
   gl_Position = projectionPosition;
+  
+  vElevation = elevation
 }
