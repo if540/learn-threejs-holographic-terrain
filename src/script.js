@@ -2,6 +2,8 @@ import './style.css'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import Guify from 'guify'
+import terrainVertxShader from './shaders/terrain/vertex.glsl'
+import terrainFragmentShader from './shaders/terrain/fragment.glsl'
 
 /**
  * Base
@@ -69,7 +71,11 @@ terrain.geometry = new THREE.PlaneGeometry(1, 1, 100, 100)
 terrain.geometry.rotateX(- Math.PI * 0.5)
 
 // Material
-terrain.material = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true })
+terrain.material = new THREE.ShaderMaterial({ 
+    vertexShader: terrainVertxShader,
+    fragmentShader: terrainFragmentShader,
+    // wireframe: true
+ })
 
 // Mesh
 terrain.mesh = new THREE.Mesh(terrain.geometry, terrain.material)
